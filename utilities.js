@@ -46,6 +46,9 @@
 })(window); // We send the window variable withing our function
 
 var mivariable = 1122;
+window.saludar = function() {
+  console.log("Hola mundo");
+};
 
 // Now see the content of your library
 console.log(myWindowGlobalLibraryName);
