@@ -2,6 +2,7 @@
   // You can enable the strict mode commenting the following line  
   // 'use strict';
 
+  window.clockifyAPI = {};
 
   // This function will contain all our code
   function myLibrary() {
