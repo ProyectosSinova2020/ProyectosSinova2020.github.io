@@ -35,6 +35,7 @@
       return settings.mute;
     };
 
+    console.log("Finalizando");
     return _myLibraryObject;
   }
 
@@ -44,6 +45,7 @@
   }
 })(window); // We send the window variable withing our function
 
+var mivariable = 1122;
 
 // Now see the content of your library
 console.log(myWindowGlobalLibraryName);
