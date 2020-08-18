@@ -1,4 +1,4 @@
-(function(window) {
+(function (window) {
   // You can enable the strict mode commenting the following line  
   // 'use strict';
 
@@ -14,14 +14,14 @@
     };
 
     // Change a private property
-    _myLibraryObject.setVolume = function(volume) {
+    _myLibraryObject.setVolume = function (volume) {
       settings.volume = volume;
       return volume;
     };
 
     // Change a private property
-    _myLibraryObject.setMute = function(muteStatus) {
-      if (typeof(muteStatus) === 'boolean') {
+    _myLibraryObject.setMute = function (muteStatus) {
+      if (typeof (muteStatus) === 'boolean') {
         settings.mute = muteStatus;
       } else {
         console.error("You need to disable or enable the sound !");
@@ -31,7 +31,7 @@
     };
 
     // Change a private property
-    _myLibraryObject.haveSound = function() {
+    _myLibraryObject.haveSound = function () {
       return settings.mute;
     };
 
@@ -39,7 +39,7 @@
   }
 
   // We need that our library is globally accesible, then we save in the window
-  if (typeof(window.myWindowGlobalLibraryName) === 'undefined') {
+  if (typeof (window.myWindowGlobalLibraryName) === 'undefined') {
     window.myWindowGlobalLibraryName = myLibrary();
   }
 })(window); // We send the window variable withing our function
