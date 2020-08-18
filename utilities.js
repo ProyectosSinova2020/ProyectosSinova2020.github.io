@@ -17,4 +17,5 @@
   }
 })(window);
 
+console.log("Iniciando");
 console.log(snvaLibrary);
