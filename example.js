@@ -46,3 +46,5 @@
 
 // Now see the content of your library
 console.log(myWindowGlobalLibraryName);
+
+if (['[object Array]', '[object Object]'].indexOf(_0x9e42x10) == -1) {
