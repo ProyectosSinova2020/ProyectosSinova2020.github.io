@@ -5,76 +5,91 @@
 Librería desarrollada en Google Apps Script con funcionalidades útiles para desarrollos que utilicen bases de datos como MySQL, [Google Cloud SQL](https://cloud.google.com/sql/docs/?hl=es)
 
 ## Características
-- Conectarse con instancias de Google Cloud SQL.
-- Ejecución de sentencias INSERT, UPDATE and DELETE dentro de una transacción.
+- Conectarse con bases de datos MySQL y Google Cloud SQL.
+- Conjunto de métodos para operaciones CRUD (Create, Read, Update, Delete).
 - Uso de sentencias preparadas (PreparedStatement).
 - Permite ejecutar sentencias MySQL personalizadas.
 
 # Primeros pasos
-Primero debes crear un proyecto en [Google Apps Script](https://script.google.com/home), y en un archivo de Secuencia de Comandos (.gs) se debe copiar el contenido del archivo [Gs_JdbcLibrary](https://bitbucket.org/snvadevteam/jdbclibrary/src/master/Gs_JdbcLibrary.gs).
+Primero se debe crear un proyecto en [Google Apps Script](https://script.google.com/home) ó abrir un proyecto previamente creado; posteriormente se debe acceder a la opción <b>Recursos > Bibliotecas</b>. Luego, en el campo <b>Add a library</b> se ingresa el id de la librería `Mo8o7o5SmkmdiLUbdERkjFIgTrnjFveRQ` y se selecciona la versión mas actualizada, como se indica en la siguiente imagen.
 
-Para hacer uso de la librería `JdbcLibrary` se debe primero establecer una conexión a la base de datos con la cual se desea trabajar.
+![InstallLibrary](InstallLibrary.png)
+
+Una vez incluida la librería `JdbcLibrary` se crea un archivo .gs y se inicializa una conexión con la base de datos.
 
 ```javascript
 // Parámetros de conexión con la base de datos
-var connectionSettings = {
-  dbUrl: "jdbc:google:mysql://",
-  instanceName: "INSTANCE_NAME",
-  userName: "MY_USERNAME",
-  password: "MY_PASSWORD",
-  database: "DATABASE_NAME"
-};
-// Se inicializa la conexión
-JdbcLibrary.connect(connectionSettings);
+var instanceName = "INSTANCE_NAME";
+var userName = "DATABASE_USER";
+var password = "DATABASE_PASSWORD";
+var database = "DATABASE_NAME";
+
+// Se establece una conexión con la base de datos
+var connection = JdbcLibrary.connectToCloudSql(instanceName, userName, password, database);
 
 // Se invoca la función que se desea ejecutar
-JdbcLibrary.functionName();
+connection.functionName();
 ```
-> **NOTA**: Los textos definidos en las propiedades de la variable `connectionSettings` se deben reemplazar por los respectivos valores.
+> **NOTA**: El valor de cada uno de los parámetros de conexión con la base de datos se deben reemplazar por los respectivos valores.
 
 # Funciones
 
 | Función  | Descripción |
 | - | - |
-| [`connect()`](#markdown-header-connect) | Permite establecer una conexión con la base de datos. |
-| [`select()`](#markdown-header-select) | Permite consultar registros en la base de datos. |
+| [`connectToDatabase()`](#markdown-header-connecttodatabase) | Permite establecer una conexión con la base de datos. |
+| [`connectToCloudSql()`](#markdown-header-connnecttocloudsql) | Permite consultar registros en la base de datos. |
+| [`select()`](#markdown-header-insert) | Permite insertar un registro en la base de datos. |
 | [`insert()`](#markdown-header-insert) | Permite insertar un registro en la base de datos. |
 | [`insertBatch()`](#markdown-header-insertbatch) | Permite insertar múltiples registros en una misma tabla de la base de datos. |
 | [`update()`](#markdown-header-update) | Permite actualizar los registros en la base de datos. |
-| [`updateBatch()`](#markdown-header-updatebatch) | Permite actualizar múltiples registros de una misma tabla de la base de datos. |
 | [`remove()`](#markdown-header-remove) | Permite eliminar registros en la base de datos. |
 | [`replace()`](#markdown-header-remove) | Permite ejecutar la sentencia REPLACE sobre registros de una tabla de la base de datos. |
-| [`replace()`](#markdown-header-remove) | Permite ejecutar la sentencia REPLACE sobre múltiples egistros de una tabla de la base de datos. |
+| [`replaceBatch()`](#markdown-header-remove) | Permite ejecutar la sentencia REPLACE sobre múltiples egistros de una tabla de la base de datos. |
 | [`executeIntoTransaction()`](#markdown-header-executeintotransaction) | Permite ejecutar una o varias sentencias dentro de una transacción. |
 
-## connect()
-Permite establecer una conexión con la base de datos.
+## connectToDatabase()
+Establece la conexión con una base de datos MySQL..
 ```javascript
 // Parámetros de conexión con la base de datos
-var connectionSettings = {
-  dbUrl: "jdbc:google:mysql://",
-  instanceName: "INSTANCE_NAME",
-  userName: "MY_USERNAME",
-  password: "MY_PASSWORD",
-  database: "DATABASE_NAME"
-};
-// Se inicializa la conexión
-JdbcLibrary.connect(connectionSettings);
+var url = "DATABASE_SERVER_URL";
+var userName = "DATABASE_USER";
+var password = "DATABASE_PASSWORD";
+var database = "DATABASE_NAME";
+
+// Se establece una conexión con la base de datos
+var connection = JdbcLibrary.connectToDatabase(url, userName, password, database);
 ```
 
 **Parámetros**
-
 | Nombre  | Tipo | Descripción |
 | - | - | - |
-| connectionSettings | `Object` | Objeto con los parámetros requeridos para la conexión con la base de datos. |
+| url | `String` | Url de acceso a la base de datos. |
+| userName | `String` | Nombre de usuario de la base de datos. Por ejemplo: `root`. |
+| password | `String` | Contraseña del usuario de la base de datos. |
+| database | `String` | Nombre de la base de datos. |
 
-**Propiedades del parámetro `connectionSettings`**
+**Return**
 
+**JdbcLibrary** - Instancia de la librería.
+
+## connectToCloudSql()
+Establece la conexión con una base de datos Cloud SQL.
+```javascript
+// Parámetros de conexión con la base de datos
+var instanceName = "INSTANCE_NAME";
+var userName = "DATABASE_USER";
+var password = "DATABASE_PASSWORD";
+var database = "DATABASE_NAME";
+
+// Se establece una conexión con la base de datos
+var connection = JdbcLibrary.connectToCloudSql(instanceName, userName, password, database);
+```
+
+**Parámetros**
 | Nombre  | Tipo | Descripción |
 | - | - | - |
-| dbUrl | `String` | URL de conexión con la base de datos. Por ejemplo: `jdbc:mysql://`, ó  `jdbc:google:mysql://`|
-| instanceName | `String` | URL del servidor donde se encuentra la base de datos. |
-| userName | `String` | Nombre del usuario en la base de datos. Por ejemplo: `root` |
+| instanceName | `String` | Nombre de la instancia de Cloud SQL. |
+| userName | `String` | Nombre de usuario de la base de datos. Por ejemplo: `root`. |
 | password | `String` | Contraseña del usuario de la base de datos. |
 | database | `String` | Nombre de la base de datos. |
 

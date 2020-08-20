@@ -1,6 +1,3 @@
-# Tabla de contenido
-####
-
 # MyUtilities
 Librería desarrollada en Google Apps Script con funcionalidades útiles para desarrollos que utilicen bases de datos como MySQL, [Google Cloud SQL](https://cloud.google.com/sql/docs/?hl=es)
 
