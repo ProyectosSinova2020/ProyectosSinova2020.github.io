@@ -11,7 +11,7 @@ Librería desarrollada en Google Apps Script con funcionalidades útiles para de
 - Permite ejecutar sentencias MySQL personalizadas.
 
 # Primeros pasos
-Primero se debe crear un proyecto en [Google Apps Script](https://script.google.com/home) ó abrir un proyecto previamente creado; posteriormente se debe acceder a la opción <b>Recursos > Bibliotecas</b>. Luego, en el campo <b>Add a library</b> se ingresa el id de la librería `Mo8o7o5SmkmdiLUbdERkjFIgTrnjFveRQ` y se selecciona la versión mas actualizada, como se indica en la siguiente imagen.
+Primero se debe crear un proyecto en [Google Apps Script](https://script.google.com/home) ó abrir un proyecto previamente creado. posteriormente se debe acceder a la opción <b>Recursos > Bibliotecas</b>, y en el campo <b>Add a library</b> se ingresa el id de la librería `Mo8o7o5SmkmdiLUbdERkjFIgTrnjFveRQ` y se selecciona la versión mas actualizada, como se indica en la siguiente imagen.
 
 ![InstallLibrary](InstallLibrary.png)
 
@@ -36,8 +36,8 @@ connection.functionName();
 
 | Función  | Descripción |
 | - | - |
-| [`connectToDatabase()`](#markdown-header-connecttodatabase) | Permite establecer una conexión con la base de datos. |
-| [`connectToCloudSql()`](#markdown-header-connnecttocloudsql) | Permite consultar registros en la base de datos. |
+| [`connectToDatabase()`](#connecttodatabase) | Permite establecer una conexión con la base de datos. |
+| [`connectToCloudSql()`](#connnecttocloudsql) | Permite consultar registros en la base de datos. |
 | [`select()`](#markdown-header-insert) | Permite insertar un registro en la base de datos. |
 | [`insert()`](#markdown-header-insert) | Permite insertar un registro en la base de datos. |
 | [`insertBatch()`](#markdown-header-insertbatch) | Permite insertar múltiples registros en una misma tabla de la base de datos. |
