@@ -6,9 +6,12 @@ Primero se debe crear un proyecto en [Google Apps Script](https://script.google.
 
 ![InstallLibrary](InstallLibrary.png)
 
-Adicionalmente, se cuenta 
+Adicionalmente, se cuenta con un conjunto de funcionalidades realizadas en JavaScript, copiando la siguiente linea dentro de la etiqueta `<head>` de nuestra aplicación.
+```html
+<script src="https://sinovasas.github.io/myUtilities.js"></script>
+```
 
-# Funciones de uso cómun
+# Lista de funciones
 A continuación, se encuentra el listado de cada una de las funciones que conforman la librería.
 
 | Función  | Descripción |
@@ -27,8 +30,8 @@ A continuación, se encuentra el listado de cada una de las funciones que confor
 | [`replaceLatinSymbols()`](#replaceLatinSymbols) | Reemplaza los acentos y caracteres latinos por las respectivas vocales. |
 | [`romanToNumber()`](#romanToNumber) | Convierte un número romano a su valor equivalente en el sistema de numeración decimal. |
 
-> (*) Solamente disponible del lado Google Apps Script.
-> (**) Solamente disponible del lado JavaScript.
+> (*) Solamente disponible en Google Apps Script.
+> (**) Solamente disponible en JavaScript.
 
 ## combineObject()
 Establece las propiedades de una variable de tipo Object sobre otra variable del mismo tipo.
