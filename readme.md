@@ -16,26 +16,26 @@ A continuación, se encuentra el listado de cada una de las funciones que confor
 
 | Función  | Disponible en GAS | Disponible en JavaScript | Descripción |
 | - | - | - | - |
-| [`allowOnlyNumber()`](#allowOnlyNumber) | | ![](check.svg) | Permite configurar un campo de tipo `<INPUT>` para que solamente permita ingresar caracteres numéricos (0-9). |
-| [`combineObject()`](#combineObject) | ![](check.svg) | ![](check.svg) | Establece las propiedades de una variable de tipo Object sobre otra variable del mismo tipo. |
-| [`exponentialBackoff()`](#exponentialBackoff) | ![](check.svg) | | Aplica el algoritmo de retroceso exponencial para obtener algún recurso de las API de Google Apps Script. |
-| [`getCapitalizeText()`](#getCapitalizeText) | ![](check.svg) | ![](check.svg) | Convierte un texto a notación Camel Case (primer caracter de cada palabra en mayúscula). |
-| [`getCardinal()`](#getCardinal) | ![](check.svg) | ![](check.svg) | Obtiene el valor cardinal de un número. |
-| [`getCloudSQLConnection()`](#getCloudSQLConnection) | ![](check.svg) | | Establece una conexión con una instancia de base de datos en Google Cloud SQL. |
-| [`getColumnLetter()`](#getColumnLetter) | ![](check.svg) | ![](check.svg) | Convierte el número de la posición de la columna de una hoja de cálculo a su correspondiente letra. |
-| [`getColumnNumber()`](#getColumnNumber) | ![](check.svg) | ![](check.svg) | Convierte la letra asociada a la columna de una hoja de cálculo a su correspondiente número. |
-| [`getFormattedText()`](#getFormattedText) | ![](check.svg) | ![](check.svg) | Obtiene un texto formateado para comparación o búsqueda. |
-| [`getHolidayDates()`](#getHolidayDates) | ![](check.svg) | ![](check.svg) | Obtiene los días festivos de un determinado año en el calendario de Colombia. |
-| [`getHtmlContent()`](#getHtmlContent) | ![](check.svg) | | Obtiene el contenido de un archivo `.html` asociado un proyecto Google Apps Script. |
-| [`getKeyValue()`](#getKeyValue) | ![](check.svg) | | Encripta o desencripta un texto definido por parámetro. Esta función puede emplearse por ejemplo, para parámetros GET en la URL de una aplicación web. |
-| [`getMySQLConnection()`](#getMySQLConnection) | ![](check.svg) | | Establece una conexión con una base de datos MySQL. |
-| [`insertGetParams()`](#insertGetParams) | ![](check.svg) | ![](check.svg) | Inserta los parámetros definidos en un objeto como parámetros GET en una URL. |
-| [`isValidEmail()`](#isValidEmail) | ![](check.svg) | ![](check.svg) | Valida si el texto definido por parámetro corresponde a una dirección de correo electrónico. |
-| [`numberToRoman()`](#numberToRoman) | ![](check.svg) | ![](check.svg) | Convierte un número entero positivo a su valor equivalente en el sistema de numeración romano. |
-| [`setSelectValues()`](#setSelectValues) | | ![](check.svg) | Establece las opciones a seleccionar en un campo de tipo `<SELECT>`. |
-| [`replaceLatinSymbols()`](#replaceLatinSymbols) | ![](check.svg) | ![](check.svg) | Reemplaza los acentos y caracteres latinos por las respectivas vocales. |
-| [`romanToNumber()`](#romanToNumber) | ![](check.svg) | ![](check.svg) | Convierte un número romano a su valor equivalente en el sistema de numeración decimal. |
-| [`validateFormField()`](#validateFormField) | | ![](check.svg) | Permite validar cada uno de los campos del formulario, y consolidar su valor en una variable de tipo `Object`. |
+| [`allowOnlyNumber()`](#allowonlynumber) | | ![](check.svg) | Permite configurar un campo de tipo `<INPUT>` para que solamente permita ingresar caracteres numéricos (0-9). |
+| [`combineObject()`](#combineobject) | ![](check.svg) | ![](check.svg) | Establece las propiedades de una variable de tipo Object sobre otra variable del mismo tipo. |
+| [`exponentialBackoff()`](#exponentialbackoff) | ![](check.svg) | | Aplica el algoritmo de retroceso exponencial para obtener algún recurso de las API de Google Apps Script. |
+| [`getCapitalizeText()`](#getcapitalizetext) | ![](check.svg) | ![](check.svg) | Convierte un texto a notación Camel Case (primer caracter de cada palabra en mayúscula). |
+| [`getCardinal()`](#getcardinal) | ![](check.svg) | ![](check.svg) | Obtiene el valor cardinal de un número. |
+| [`getCloudSQLConnection()`](#getcloudsqlconnection) | ![](check.svg) | | Establece una conexión con una instancia de base de datos en Google Cloud SQL. |
+| [`getColumnLetter()`](#getcolumnletter) | ![](check.svg) | ![](check.svg) | Convierte el número de la posición de la columna de una hoja de cálculo a su correspondiente letra. |
+| [`getColumnNumber()`](#getcolumnnumber) | ![](check.svg) | ![](check.svg) | Convierte la letra asociada a la columna de una hoja de cálculo a su correspondiente número. |
+| [`getFormattedText()`](#getformattedtext) | ![](check.svg) | ![](check.svg) | Obtiene un texto formateado para comparación o búsqueda. |
+| [`getHolidayDates()`](#getholidaydates) | ![](check.svg) | ![](check.svg) | Obtiene los días festivos de un determinado año en el calendario de Colombia. |
+| [`getHtmlContent()`](#gethtmlcontent) | ![](check.svg) | | Obtiene el contenido de un archivo `.html` asociado un proyecto Google Apps Script. |
+| [`getKeyValue()`](#getkeyvalue) | ![](check.svg) | | Encripta o desencripta un texto definido por parámetro. Esta función puede emplearse por ejemplo, para parámetros GET en la URL de una aplicación web. |
+| [`getMySQLConnection()`](#getmysqlconnection) | ![](check.svg) | | Establece una conexión con una base de datos MySQL. |
+| [`insertGetParams()`](#insertgetparams) | ![](check.svg) | ![](check.svg) | Inserta los parámetros definidos en un objeto como parámetros GET en una URL. |
+| [`isValidEmail()`](#isvalidemail) | ![](check.svg) | ![](check.svg) | Valida si el texto definido por parámetro corresponde a una dirección de correo electrónico. |
+| [`numberToRoman()`](#numbertoroman) | ![](check.svg) | ![](check.svg) | Convierte un número entero positivo a su valor equivalente en el sistema de numeración romano. |
+| [`setSelectValues()`](#setselectvalues) | | ![](check.svg) | Establece las opciones a seleccionar en un campo de tipo `<SELECT>`. |
+| [`replaceLatinSymbols()`](#replacelatinsymbols) | ![](check.svg) | ![](check.svg) | Reemplaza los acentos y caracteres latinos por las respectivas vocales. |
+| [`romanToNumber()`](#romantonumber) | ![](check.svg) | ![](check.svg) | Convierte un número romano a su valor equivalente en el sistema de numeración decimal. |
+| [`validateFormField()`](#validateformfield) | | ![](check.svg) | Permite validar cada uno de los campos del formulario, y consolidar su valor en una variable de tipo `Object`. |
 
 > GAS: Google Apps Script
 
@@ -165,7 +165,7 @@ var database = "DATABASE_NAME";
 // Ejemplo de uso de la función
 var connection = myUtilities.getCloudSQLConnection(instanceName, userName, password, database);
 ```
-> Por medio de la variable `connection` se invoca cada una de las funciones definidas en la sección [`JdbcInstance`](#JdbcInstance).
+> Por medio de la variable `connection` se invoca cada una de las funciones definidas en la sección [`JdbcInstance`](#jdbcinstance).
 
 **Parámetros**
 
@@ -178,7 +178,7 @@ var connection = myUtilities.getCloudSQLConnection(instanceName, userName, passw
 
 **Return**
 
-**JdbcInstance** - Instancia a las funciones que se pueden ejecutar sobre una conexión a la base de datos. Para más información, consultar la sección [`JdbcInstance`](#JdbcInstance).
+**JdbcInstance** - Instancia a las funciones que se pueden ejecutar sobre una conexión a la base de datos. Para más información, consultar la sección [`JdbcInstance`](#jdbcinstance).
 
 ## getColumnLetter()
 Convierte el número de la posición de la columna de una hoja de cálculo a su correspondiente letra.
@@ -329,7 +329,7 @@ var database = "DATABASE_NAME";
 // Ejemplo de uso de la función
 var connection = myUtilities.getMySQLConnection(url, userName, password, database);
 ```
-> Por medio de la variable `connection` se invoca cada una de las funciones definidas en la sección [`JdbcInstance`](#JdbcInstance).
+> Por medio de la variable `connection` se invoca cada una de las funciones definidas en la sección [`JdbcInstance`](#jdbcinstance).
 
 **Parámetros**
 
@@ -342,7 +342,7 @@ var connection = myUtilities.getMySQLConnection(url, userName, password, databas
 
 **Return**
 
-**JdbcInstance** - Instancia a las funciones que se pueden ejecutar sobre una conexión a la base de datos. Para más información, consultar la sección [`JdbcInstance`](#JdbcInstance).
+**JdbcInstance** - Instancia a las funciones que se pueden ejecutar sobre una conexión a la base de datos. Para más información, consultar la sección [`JdbcInstance`](#jdbcinstance).
 
 ## insertGetParams()
 Inserta los parámetros definidos en un objeto como parámetros GET en una URL.
@@ -586,11 +586,11 @@ Conjunto de funciones que se pueden emplear para registrar y consultar informaci
 | - | - |
 | [`select()`](#select) | Consulta los registros de la base de datos. |
 | [`insert()`](#insert) | Inserta un registro en la base de datos. |
-| [`insertBatch()`](#insertBatch) | Inserta múltiples registros en la base de datos. |
+| [`insertBatch()`](#insertbatch) | Inserta múltiples registros en la base de datos. |
 | [`update()`](#update) | Actualiza la información de los registros de la base de datos. |
 | [`remove()`](#remove) | Elimina los registros de la base de datos. |
 | [`replace()`](#replace) | Reemplaza los datos de un registro cuyo identificador único se encuentra definido en el objeto de datos. |
-| [`replaceBatch()`](#replaceBatch) | Ejecuta la sentencia `REPLACE` sobre varios registros. |
+| [`replaceBatch()`](#replacebatch) | Ejecuta la sentencia `REPLACE` sobre varios registros. |
 
 ## select()
 Consulta los registros de la base de datos.
