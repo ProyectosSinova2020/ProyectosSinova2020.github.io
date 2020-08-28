@@ -1,12 +1,12 @@
 # MyUtilities
 Conjunto de funcionalidades comunmente empleadas en el desarrollo de aplicaciones en Google Apps Script
 
-# Instalación
+# Primeros pasos
 Primero se debe crear un proyecto en [Google Apps Script](https://script.google.com/home), ó abrir un proyecto previamente creado. Posteriormente se debe acceder a la opción <b>Recursos > Bibliotecas</b>, y en el campo <b>Add a library</b> se ingresa el id de la librería `MyoZFi-FZHfWbzEpy3NshgAKPMwQAznpp` y se selecciona la versión mas reciente.
 
 ![InstallLibrary](InstallLibrary.png)
 
-Adicionalmente, se cuenta con un conjunto de funcionalidades realizadas en JavaScript, copiando la siguiente linea dentro de la etiqueta `<head>` de nuestra aplicación.
+Adicionalmente, se cuenta con un conjunto de funcionalidades realizadas en JavaScript; las cuales podrán utilizarse en las aplicaciones web. Para ello, se debe copiar la siguiente linea dentro de las etiquetas `<head>` de nuestra aplicación.
 ```html
 <script src="https://sinovasas.github.io/myUtilities.js"></script>
 ```
