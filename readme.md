@@ -285,7 +285,7 @@ var htmlTemplateContent = myUtilities.getHtmlContent(htmlEmail, false, {title: "
 
 | Nombre  | Tipo | Descripción |
 | - | - | - |
-| templateFile | `HtmlTemplate | HtmlOutput` | Referencia al archivo HTML del cual se desea obtener el contenido. |
+| templateFile | `HtmlTemplate|HtmlOutput` | Referencia al archivo HTML del cual se desea obtener el contenido. |
 | isJsCode | `Boolean` | Valor de verdad que indica si el contenido del archivo `templateFile` corresponde a código JavaScript a incluir en el proyecto. |
 | params | `Object` | Objeto con atributos a definir en los `Scriptlets` del archivo `templateFile` (solo si es de tipo `HtmlTemplate`). |
 
