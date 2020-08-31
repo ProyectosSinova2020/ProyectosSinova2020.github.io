@@ -805,3 +805,267 @@ connection.replaceBatch("students", ['id' 'name', 'surname'], studentsList);
 | tableName | `String` | Nombre de la tabla sobre la cual se insertará el registro. |
 | fieldsList | `Array` | Lista con el nombre de cada uno de los campos sobre el cual se establecerá la sentencia `REPLACE`. |
 | recordsArray | `Array[Object]` | Lista de registros a reemplazar en la tabla indicada. |
+
+# DateUtilities
+Conjunto de funciones previamente desarrolladas para el manejo de fechas. Dichas funciones se encuentran disponibles tanto en **Google Apps Script** como en **JavaScript**.
+
+**Google Apps Script**
+```javascript
+// Fecha a partir de la cual se desea valida si el año es o no bisiesto
+var currentDate = new Date();
+// Ejemplo de uso de la función
+var isLeapYear = myUtilities.DateUtilities.isLeapYear(currentDate);
+```
+
+**JavaScript**
+```javascript
+// Fecha a partir de la cual se desea valida si el año es o no bisiesto
+var currentDate = new Date();
+// Ejemplo de uso de la función
+var isLeapYear = myUtilities.isLeapYear(currentDate);
+```
+
+## Lista de funciones
+
+| Función  | Descripción |
+| - | - |
+| [`convertTextToDate()`](#converttexttodate) | Convierte una fecha en formato de texto a un valor de tipo `Date`.
+| [`getDateTimeZone()`](#getdatetimezone) | Obtiene el valor de la zona horaria asociada a una fecha.
+| [`getLapsedTime()`](#getlapsedtime) | Obtiene el intervalo de tiempo entre dos fechas.
+| [`getLastMonthDay()`](#getlastmonthday) | Obtiene la fecha correspondiente al último día del mes asociado a la fecha definida por parámetro.
+| [`getMonthName()`](#getmonthname) | Obtiene el nombre del mes correspondiente al valor de la fecha definida por parámetro.
+| [`getMonthWeek()`](#getmonthweek) | Obtiene el número de la semana del mes con base a la fecha definida por parámetro.
+| [`getWeekName()`](#getweekname) | Obtiene el nombre del día de la semana correspondiente al valor de la fecha definida por parámetro.
+| [`getWeekRange()`](#getweekrange) | Obtiene las fechas correspondientes al primer y último día de la semana tomando como referencia la fecha definida por parámetro.
+| [`getYearWeek()`](#getyearweek) | Obtiene el número de la semana del año con base a la fecha definida por parámetro.
+| [`isLeapYear()`](#isleapyear) | Valida si el año correspondiente a la fecha definida por parámetro es o no bisiesto.
+
+> Los ejemplos de cada una de las funciones se empleará la notación descrita para `JavaScript`. Para usar las funciones en `Google Apps Script` se debe emplear la respectiva notación.
+
+## convertTextToDate()
+Convierte una fecha en formato de texto a un valor de tipo `Date`.
+```javascript
+// Ejemplos de fecha
+var dateText = "10/06/2020";
+var datetimeText = "10/06/2020 20:40";
+var datetimeText2 = "10/06/2020 08:40 PM";
+
+// Ejemplos de uso de la función
+myUtilities.convertTextToDate(dateText);
+myUtilities.convertTextToDate(datetimeText);
+myUtilities.convertTextToDate(datetimeText2);
+```
+
+**Parámetros**
+
+| Nombre  | Tipo | Descripción |
+| - | - | - |
+| dateText | `String` | Valor de la fecha de tipo texto.<br>El texto de la fecha debe tener alguno de los siguientes formatos: `dd/mm/yyyy`, `dd/mm/yyyy hh:mm`, `dd/mm/yyyy hh:mm AM/PM`. |
+
+**Return**
+
+**Date** - Valor de la fecha como un dato de tipo `Date`.
+
+## getDateTimeZone()
+Obtiene el valor de la zona horaria asociada a una fecha.
+```javascript
+// Fecha actual del sistema
+var currentDate = new Date();
+
+// Ejemplo de uso de la función
+var timezone = myUtilities.getDateTimeZone(currentDate);
+// Resultado: "GMT-05:00" (el valor puede variar)
+```
+
+**Parámetros**
+
+| Nombre  | Tipo | Descripción |
+| - | - | - |
+| date | `Date` | Valor de la fecha de la cual se desea obtener la zona horaria. |
+
+**Return**
+
+**String** - Valor de la zona horaria asociada a la fecha.
+
+## getLapsedTime()
+Obtiene el intervalo de tiempo entre dos fechas.
+```javascript
+var date1 = new Date("06/18/2018 14:30"); // 18 de junio de 2018, 02:30 PM
+var date2 = new Date("06/20/2018 11:45"); // 20 de junio de 2018, 11:45 AM
+
+// Ejemplo de uso de la función
+var lapsedTime = myUtilities.getLapsedTime(date1, date2);
+/*
+Resultado: Diferencia de tiempo separado por cada una de las unidades de tiempo
+{
+  "years": 0, // Años
+  "months": 0, // Meses
+  "days": 1, // Días
+  "hours": 2, // Horas
+  "minutes": 45, // Minutos
+  "seconds": 0, // Segundos
+  "miliseconds": 0 // Milisegundos
+}
+*/
+```
+
+**Parámetros**
+
+| Nombre  | Tipo | Descripción |
+| - | - | - |
+| date1 | `Date` | Valor de la primer fecha. |
+| date2 | `Date` | Valor de la segunda fecha. |
+
+**Return**
+
+**Object** - Diferencia de tiempo separado por cada una de las unidades de tiempo.
+
+## getLastMonthDay()
+Obtiene el valor correspondiente al último día del mes asociado a la fecha definida por parámetro.
+```javascript
+var currentDate = new Date("02/26/2016 10:30"); // 26 de febrero de 2016, 10:30 AM
+
+// Ejemplo de uso de la función
+var lastMonthDay = myUtilities.getLastMonthDay(currentDate);
+// Resultado: 29 (dado que el 2016 es año bisiesto)
+```
+
+**Parámetros**
+
+| Nombre  | Tipo | Descripción |
+| - | - | - |
+| date | `Date` | Fecha a partir de la cual se desea obtener la información. |
+
+**Return**
+
+**Number** - Último día del mes asociado a la fecha `date`.
+
+## getMonthName()
+Obtiene el nombre del mes correspondiente al valor de la fecha definida por parámetro.
+```javascript
+var currentDate = new Date("02/26/2016 10:30"); // 26 de febrero de 2016, 10:30 AM
+
+// Ejemplo de uso de la función
+var monthName = myUtilities.getMonthName(currentDate);
+// Resultado: "Febrero"
+```
+
+**Parámetros**
+
+| Nombre  | Tipo | Descripción |
+| - | - | - |
+| date | `Date` | Fecha a partir de la cual se desea obtener la información. |
+
+**Return**
+
+**String** - Nombre del mes asociado a la fecha definida en `date`.
+
+## getMonthWeek()
+Obtiene el número de la semana del mes con base a la fecha definida por parámetro.
+```javascript
+var currentDate = new Date("02/26/2016 10:30"); // 26 de febrero de 2016, 10:30 AM
+
+// Ejemplo de uso de la función
+var monthName = myUtilities.getMonthWeek(currentDate); // Equivale a utilizar myUtilities.getMonthWeek(currentDate, 0)
+// Resultado: 4
+```
+
+**Parámetros**
+
+| Nombre  | Tipo | Descripción |
+| - | - | - |
+| date | `Date` | Fecha a partir de la cual se desea obtener la información. |
+| startDay | `Number` | Valor correspondiente al primer día de la semana.<br>Los posibles valores son: 0 (Dom), 1 (Lun), 2 (Mar), 3 (Mie), 4 (Jue), 5 (Vie), y 6 (Sab). |
+
+**Return**
+
+**String** - Número de la semana del mes asociado a la fecha definida en `date`.
+
+## getWeekName()
+Obtiene el nombre del día de la semana correspondiente al valor de la fecha definida por parámetro.
+```javascript
+var currentDate = new Date("02/26/2016 10:30"); // 26 de febrero de 2016, 10:30 AM
+
+// Ejemplo de uso de la función
+var monthName = myUtilities.getWeekName(currentDate);
+// Resultado: "Viernes"
+```
+
+**Parámetros**
+
+| Nombre  | Tipo | Descripción |
+| - | - | - |
+| date | `Date` | Fecha a partir de la cual se desea obtener la información. |
+
+**Return**
+
+**String** - Nombre del día de la semana asociado a la fecha definida en `date`.
+
+## getWeekRange()
+Obtiene las fechas correspondientes al primer y último día de la semana tomando como referencia la fecha definida por parámetro.
+```javascript
+var currentDate = new Date("02/26/2016 10:30"); // 26 de febrero de 2016, 10:30 AM
+
+// Ejemplo de uso de la función
+var weekRange = myUtilities.getWeekRange(currentDate);
+/*
+Resultado: Fechas correspondientes al primer y último día de la semana en la que se encuentra la fecha definida por parámetro
+{
+  "start": Sun Feb 21 10:30:00 GMT-05:00 2016,
+  "end": Sat Feb 27 10:30:00 GMT-05:00 2016
+}
+*/
+```
+
+**Parámetros**
+
+| Nombre  | Tipo | Descripción |
+| - | - | - |
+| date | `Date` | Fecha a partir de la cual se desea obtener la información. |
+| startDay | `Number` | Valor correspondiente al primer día de la semana.<br>Los posibles valores son: 0 (Dom), 1 (Lun), 2 (Mar), 3 (Mie), 4 (Jue), 5 (Vie), y 6 (Sab). |
+
+**Return**
+
+**Object** - Valores correspondientes al primer y último día de la semana en la que se encuentra la fecha definida por parámetro.
+
+## getYearWeek()
+Obtiene el número de la semana del año con base a la fecha definida por parámetro.
+```javascript
+var currentDate = new Date("02/26/2016 10:30"); // 26 de febrero de 2016, 10:30 AM
+
+// Ejemplo de uso de la función
+var monthName = myUtilities.getYearWeek(currentDate); // Equivale a utilizar myUtilities.getYearWeek(currentDate, 0)
+// Resultado: 9
+```
+
+**Parámetros**
+
+| Nombre  | Tipo | Descripción |
+| - | - | - |
+| date | `Date` | Fecha a partir de la cual se desea obtener la información. |
+| startDay | `Number` | Valor correspondiente al primer día de la semana.<br>Los posibles valores son: 0 (Dom), 1 (Lun), 2 (Mar), 3 (Mie), 4 (Jue), 5 (Vie), y 6 (Sab). |
+
+**Return**
+
+**String** - Número de la semana del año asociado a la fecha definida en `date`.
+
+## isLeapYear()
+Valida si el año correspondiente a la fecha definida por parámetro es o no bisiesto.
+```javascript
+// Fechas de ejemplo para validar el año bisiesto
+var date1 = new Date("08/19/2016"), date2 = new Date("08/19/2018");
+
+// Ejemplo de uso de la función
+myUtilities.DateUtilities.isLeapYear(date1); // Resultado: true
+myUtilities.DateUtilities.isLeapYear(date2); // Resultado: false
+```
+
+**Parámetros**
+
+| Nombre  | Tipo | Descripción |
+| - | - | - |
+| date | `Date` | Fecha a partir de la cual se desea obtener la información. |
+
+**Return**
+
+**Boolean** - Valor de verdad que indica si el año asociado a la fecha `date` es bisiesto (`true`) o no (`false`).
