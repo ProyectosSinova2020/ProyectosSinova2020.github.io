@@ -1069,3 +1069,6 @@ myUtilities.DateUtilities.isLeapYear(date2); // Resultado: false
 **Return**
 
 **Boolean** - Valor de verdad que indica si el año asociado a la fecha `date` es bisiesto (`true`) o no (`false`).
+
+# GoogleAppsInstaller
+Conjunto de funciones para  fechas. Dichas funciones se encuentran disponibles solamente en **Google Apps Script**.
